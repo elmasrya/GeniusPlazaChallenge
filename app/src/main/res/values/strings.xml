@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Genius Plaza Challenge</string>
+    <string name="user_title">Users</string>
+    <string name="user_name">No name is display</string>
+    <string name="user_avatar">No image to display</string>
+    <string name="create_user">Create User</string>
+
+</resources>
