@@ -1,39 +1,25 @@
 package com.example.geniusplazachallenge.network_layer;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.util.LruCache;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 
+/**
+ * Created by Andrew El-Masry March 10th, 2019
+ *
+ * This is the singleton that will stay in memory for the life of the app.
+ * This will initiate all of the api calls.
+ */
 public class VolleySingleton {
     private static VolleySingleton instance;
     private RequestQueue requestQueue;
-    private ImageLoader imageLoader;
     private static Context ctx;
 
     private VolleySingleton(Context context) {
         ctx = context;
         requestQueue = getRequestQueue();
-
-        imageLoader = new ImageLoader(requestQueue,
-            new ImageLoader.ImageCache() {
-                private final LruCache<String, Bitmap>
-                    cache = new LruCache<String, Bitmap>(20);
-
-                @Override
-                public Bitmap getBitmap(String url) {
-                    return cache.get(url);
-                }
-
-                @Override
-                public void putBitmap(String url, Bitmap bitmap) {
-                    cache.put(url, bitmap);
-                }
-            });
     }
 
     public static synchronized VolleySingleton getInstance(Context context) {

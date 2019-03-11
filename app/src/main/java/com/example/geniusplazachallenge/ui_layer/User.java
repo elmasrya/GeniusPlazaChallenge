@@ -1,7 +1,5 @@
 package com.example.geniusplazachallenge.ui_layer;
 
-import android.graphics.Bitmap;
-
 /**
  * Created by Andrew El-Masry March 10th, 2019
  *
@@ -9,7 +7,6 @@ import android.graphics.Bitmap;
  */
 public class User {
     String userName, imgUrl;
-    Bitmap avatar;
 
     public String getUserName() {
         return userName;

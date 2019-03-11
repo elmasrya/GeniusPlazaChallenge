@@ -3,10 +3,8 @@ package com.example.geniusplazachallenge.network_layer;
 import android.content.Context;
 import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonObjectRequest;
 
 import org.json.JSONObject;
@@ -15,17 +13,14 @@ import org.json.JSONObject;
  * Created by Andrew El-Masry March 10th, 2019
  *
  * The purpose of this class is to handle all api calls
- * that relate to the User object.
+ * that relate to the User.
  */
 public class UserRequest {
-    private String baseURL = "https://reqres.in/api/";
-    private String endPoint = "users";
+    private String baseURL = "https://reqres.in/api/users";
     private String successMessage = "Success!";
     private String errorMessage = "Something went wrong!";
     private Toast requestToast = null;
     private Context context = null;
-    private ImageLoader userImagerLoader = null;
-    private static final String TAG = "UserRequest";
 
     public UserRequest(Context context) {
         this.context = context;
@@ -33,28 +28,28 @@ public class UserRequest {
     }
 
     /**
-     * The GET request to retrieve all the users
+     * Initiates the api call.
      *
-     * @param requestController
+     * @param requestController Interface to handle api call.
+     * @param requestMethod     The type of request GET = 0, POST = 1, PUT = 2, DELETE = 3;
+     * @param json              The JSON Object.
      */
-    public void getRequest(final RequestController requestController){
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-            (Request.Method.GET, baseURL + endPoint, null, new Response
-                .Listener<JSONObject>() {
+    public void initiateRequest(final RequestController requestController, int requestMethod,
+                           JSONObject json){
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(requestMethod, baseURL,
+            json, new Response.Listener<JSONObject>() {
 
-                @Override
-                public void onResponse(JSONObject response) {
-                    responseMessage(successMessage);
-                    requestController.finish(response);
-                }
-            }, new Response.ErrorListener() {
+            @Override
+            public void onResponse(JSONObject response) {
+                responseMessage(successMessage);
+                requestController.finish(response);
+            }}, new Response.ErrorListener() {
 
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    responseMessage(errorMessage);
-                }
-            });
-
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                responseMessage(errorMessage);
+            }
+        });
         VolleySingleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
     }
 

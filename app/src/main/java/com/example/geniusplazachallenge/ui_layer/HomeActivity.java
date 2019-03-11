@@ -19,6 +19,11 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+/**
+ * Created by Andrew El-Masry March 10th, 2019
+ *
+ * This is the home activity.
+ */
 public class HomeActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
@@ -49,7 +54,7 @@ public class HomeActivity extends AppCompatActivity {
 
         final UserRequest userRequest = new UserRequest(this);
 
-        userRequest.getRequest(new RequestController() {
+        userRequest.initiateRequest(new RequestController() {
             @Override
             public void start() {
 
@@ -81,6 +86,6 @@ public class HomeActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-        });
+        }, 0,  null);
     }
 }
