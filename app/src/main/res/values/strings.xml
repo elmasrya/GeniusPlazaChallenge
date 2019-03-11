@@ -11,4 +11,10 @@
     <string name="image_label">Please provide image url for your Photo:</string>
     <string name="image_entry">For Example: http://myimage.jpg</string>
     <string name="submit">Submit</string>
+    <string name="submit_error">Please provide a valid &#160;</string>
+    <string-array name="error_fields">
+        <item>first name.</item>
+        <item>last name.</item>
+        <item>image url.</item>
+    </string-array>
 </resources>
