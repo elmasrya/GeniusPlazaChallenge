@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="25dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/first_name_label"/>
+
+    <EditText
+        android:id="@+id/user_first_name_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/first_name_entry"
+        android:layout_marginBottom="25dp"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/last_name_label"/>
+
+    <EditText
+        android:id="@+id/user_last_name_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/last_name_entry"
+        android:layout_marginBottom="25dp"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/image_label"/>
+
+    <EditText
+        android:id="@+id/user_image_url_entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/image_entry"
+        android:layout_marginBottom="25dp"/>
+
+    <Button
+        android:id="@+id/create_user_submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"/>
+</LinearLayout>

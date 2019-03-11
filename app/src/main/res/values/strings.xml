@@ -4,5 +4,11 @@
     <string name="user_name">No name is display</string>
     <string name="user_avatar">No image to display</string>
     <string name="create_user">Create User</string>
-
+    <string name="first_name_label">First Name: </string>
+    <string name="first_name_entry">Type your first name here</string>
+    <string name="last_name_label">Last Name: </string>
+    <string name="last_name_entry">Type your last name here</string>
+    <string name="image_label">Please provide image url for your Photo:</string>
+    <string name="image_entry">For Example: http://myimage.jpg</string>
+    <string name="submit">Submit</string>
 </resources>
